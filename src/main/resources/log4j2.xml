@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="TRACE">
+	<Properties>
+		<Property name="logPath">/APP/fortytwo42/logs/adapter</Property>
+		<!-- <Property name="patternInfo">%d{dd/MMM/yyyy HH:mm:ss,SSS} %F : %C 
+			: %M() : THREAD[%t] : LINE[%L] : [%m]%n</Property> -->
+		<Property name="patternInfo">%d{dd/MMM/yyyy HH:mm:ss,SSS} [%-5p] [%t:%10c][%M] REQ-REF-NUM:: %X{request_reference} :: %m%n</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="RollingFile" fileName="${logPath}/i-am.log"
+			filePattern="${logPath}/i-am-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${patternInfo}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="100MB" />
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="10 MB"/> -->
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%m%n"/>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="root" level="debug" additivity="false">
+			<appender-ref ref="RollingFile" level="debug" />
+		</Logger>
+		<Root level="TRACE" additivity="false">
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>

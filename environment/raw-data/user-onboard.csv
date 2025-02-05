@@ -1,0 +1,3 @@
+"account_type","state","user_credential","question_one","answer_one","question_two","answer_two","application_id","service_name","user_id","mobile_number","email_id","comment"
+"ADMIN","ACTIVE","112233","What is your mother's name?","a","What is your sibling's name?","a","MyMoneyBk0009","APPROVAL","76T87DFg6","+919878678976","test@gmail.com","ok"
+"ADMIN","ACTIVE","112233","What is your mother's name?","b","What is your sibling's name?","b","MyMoneyBk0009","APPROVAL","76T87DFg6","+918790985676","email.test@gmail.com","ok"

@@ -1,0 +1,7 @@
+#3.6.3
+use iamdb
+db.createCollection("fcm_notification_details");
+db.getCollection("fcm_notification_details").createIndex( { "application_id": 1 }, { unique: true } );
+#rollback
+use iamdb
+db.getCollection("fcm_notification_details").drop();

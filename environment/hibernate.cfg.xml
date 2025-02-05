@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.default_schema">ft42dbadmin</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+		<property name="hibernate.hikari.dataSource.url">jdbc:postgresql://postgres:5432/ft42dbadmin</property>
+		 <property name="hibernate.hikari.dataSource.user">ft42dbadmin</property> 
+		 <property name="hibernate.hikari.dataSource.password">ft42dbadminneebal</property>
+		 <property name="hibernate.hikari.dataSourceClassName">org.postgresql.jdbc2.optional.PoolingDataSource</property> 
+		 <property name="hibernate.hikari.leakDetectionThreshold">30000</property> 		
+		
+		<property name="show_sql">true</property>
+		<property name="javax.persistence.validation.mode">none</property>
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<property name="hibernate.hikari.connectionTimeout">20000</property>
+	<property name="hibernate.hikari.minimumIdle">5</property>
+	<property name="hibernate.hikari.maximumPoolSize">30</property>
+                <mapping class="in.fortytwo42.entities.bean.IdentityProvider"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserApplicationServiceCompositeKey"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.AuthenticationAttempt"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Application"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.EvidenceStore"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.AuthenticationAttemptHistory"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserSessionToken"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.User"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.SRAApplicationSetting"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.TunnelLog"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Service"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Permission"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.SRAGatewaySetting"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.CallbackUrl"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.ResourceLog"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Role"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Enterprise"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.BaseTimestampEntity"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.AttributeStore"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserApplicationServiceRel"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserAuthPrincipal"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Request"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.SRAApplicationGatewayRel"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.SRAGatewaySetting"></mapping>
+                 <mapping class="in.fortytwo42.entities.bean.IdentityProvider"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.Mapper"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.SyncSetting"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserGroup"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserUserGroupRel"></mapping>
+               <!-- <mapping class="in.fortytwo42.entities.bean.ApplicationLabel"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.ApplicationLabelStaging"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.StagingUserApplicationRelBindings"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.StagingCallbackUrl"></mapping>-->
+                <mapping class="in.fortytwo42.entities.bean.AttributeStore"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.EvidenceStore"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.UserGroupApplicationRel"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.ThirdParties"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.ServerRegistry"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.EscFile"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.FalloutSyncData"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.TemplateDetails"></mapping>
+                <mapping class="in.fortytwo42.entities.bean.ValidationRule"></mapping>
+	</session-factory>
+</hibernate-configuration>

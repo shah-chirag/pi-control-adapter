@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://JAVA.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="true">
+	<display-name>pi-control-adapter</display-name>
+	<listener>
+		<listener-class>in.fortytwo42.adapter.controllers.IamContextListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>in.fortytwo42.adapter.controllers.IamContextRegister</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+	<context-param>
+		<param-name>log4jConfiguration</param-name>
+		<param-value>log4j2.xml</param-value>
+	</context-param>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<!-- <security-constraint> <web-resource-collection> <web-resource-name>restricted 
+		methods</web-resource-name> <url-pattern>/*</url-pattern> <http-method>OPTIONS</http-method> 
+		</web-resource-collection> <auth-constraint/> </security-constraint> -->
+</web-app>
